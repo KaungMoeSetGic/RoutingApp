@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   resources :blogs
   resources :posts
 
+  get 'posts/*missing', to: 'posts#missing'
+
+  get 'query/:smth/:another_one', to: 'pages#something'
+  get 'query/:smth', to: 'pages#something'
+
   root to: 'pages#home'
 end
